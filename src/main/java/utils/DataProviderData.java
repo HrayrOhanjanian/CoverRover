@@ -8,7 +8,7 @@ public class DataProviderData {
     String  randomEmail = GetQuoteForMyPetPage.randomEmail;
 
     @DataProvider(name = "getDataForFirstStep")
-    public  Object[][] getData() {
+    public Object[][] getData() {
         Object[][] data = {
                 {"", "", "", "", 4, "required message count is wrong when user without filling clicks on the next step button"},
                 {"", "lastname", "123", randomEmail, 1,"required message count is wrong when user without filling firstname click on the next step button"},

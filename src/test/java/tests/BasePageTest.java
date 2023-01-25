@@ -18,19 +18,18 @@ public class BasePageTest {
     public void navigateToURL() {
         DriverFactory.goToUrl(MAIN_URL);
     }
-    String platformName = "chrome";
     @BeforeMethod
     void setup() {
-        DriverFactory.initDriver(platformName);
+        DriverFactory.initDriver();
         SeleniumActions.setActions();
     }
 
-    @AfterMethod
+    /*@AfterMethod
     void makeScreenScreenShotIfFails(ITestResult result){
         if (result.getStatus() == ITestResult.FAILURE) {
             ScreenShot.makeScreenShot(result.getName());
         }
-    }
+    }*/
     @AfterMethod(alwaysRun = true)
     void tearDown() {
         DriverFactory.quiteDriver();

@@ -89,9 +89,7 @@ public class Waiters {
         }
     }
 
-   public static void waitJsLoad() {
-        setWait(20);
-        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
-        wait.until(d -> (Boolean) js.executeScript("return document.readyState").toString().equals("complete"));
-   }
+    public static void implicitWait() {
+        DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
 }

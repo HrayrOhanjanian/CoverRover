@@ -1,11 +1,10 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import utils.ElementFunctions;
-import utils.RandomUtils;
-import utils.SeleniumActions;
-import utils.Waiters;
+import utils.*;
 
 import java.util.List;
 
@@ -81,9 +80,14 @@ public class GetQuoteForMyPetPage extends BasePage{
     @FindBy (xpath = "//*[contains(text(),'Great News')]")
     public WebElement successMessage;
 
+    public WebElement getButton() {
+        return DriverFactory.getDriver().findElement(By.xpath("(//*[contains(text(),'Get a free quote now')])[1]"));
+    }
+
 
     public void  clickAQuoteForMyPetBtb() {
-        SeleniumActions.clickOnElement(getAQuoteForMyPetBtb);
+        SeleniumActions.clickOnElement(getButton());
+        //SeleniumActions.clickOnElement(getAQuoteForMyPetBtb);
     }
     public void clickNextStepButton() {
         SeleniumActions.clickOnElement(nextStepButton);

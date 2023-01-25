@@ -30,7 +30,6 @@ public class SeleniumActions {
 
     public static void typeTextOnElement(WebElement element, String textToTypeOnElement) {
         Waiters.waitForVisibilityElement(element, 5);
-        clearTextFromElement(element);
         getActions().sendKeys(element,textToTypeOnElement).build().perform();
     }
 
