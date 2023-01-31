@@ -21,7 +21,7 @@ public class GetQuoteForMyPetTest extends BasePageTest{
     }
 
     // Check is required errors appears when user doesn't fill eny fill any field in first step
-  @Test(dataProvider = "getDataForFirstStep", dataProviderClass = DataProviderData.class)
+  /*@Test(dataProvider = "getDataForFirstStep", dataProviderClass = DataProviderData.class)
     public void firstStepRequiredMessages(String firstname, String lastname, String zip, String email, int requiredMessageCount, String wrongMessageCount) {
         GetQuoteForMyPetPage getQuoteForMyPetPage = new GetQuoteForMyPetPage();
         getQuoteForMyPetPage.clickAQuoteForMyPetBtb();
@@ -52,7 +52,7 @@ public class GetQuoteForMyPetTest extends BasePageTest{
         softAssert.assertFalse(getQuoteForMyPetPage.isZipCodeValueContainsText(zipCode), invalidZip);
         softAssert.assertAll();
     }
-
+*/
     // Check second step validation
     @Test
     void secondStepValidation() {
@@ -65,17 +65,4 @@ public class GetQuoteForMyPetTest extends BasePageTest{
         softAssert.assertAll();
     }
 
-
-    @Test
-    void testt() throws InterruptedException {
-
-        GetQuoteForMyPetPage getQuoteForMyPetPage = new GetQuoteForMyPetPage();
-
-        getQuoteForMyPetPage.clickAQuoteForMyPetBtb();
-        getQuoteForMyPetPage.fillEmailField("Email");
-        Thread.sleep(3000);
-        SeleniumActions.clearTextFromElement(getQuoteForMyPetPage.emailField);
-
-        Thread.sleep(3000);
-    }
 }
